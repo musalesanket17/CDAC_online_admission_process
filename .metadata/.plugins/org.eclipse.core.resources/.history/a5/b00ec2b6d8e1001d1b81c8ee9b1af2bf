@@ -1,0 +1,96 @@
+package acts.cdac.in;
+import java.util.Scanner;
+
+public class Authentification extends StudentList{
+    private static Scanner sc = new Scanner(System.in);
+    private static boolean flag ;
+
+     
+	 public static boolean isFlag() {
+		return flag;
+	}
+	public static void setFlag(boolean flag) {
+		Authentification.flag = flag;
+	}
+	public static  void AuthtificationForFurtherProcess(int registrationNo) {
+		 for(Studentclass el : student) {
+		 if(el.getRegistrationNumber() == registrationNo) {
+			 setFlag(true); 
+
+			 try {
+				System.out.println("Please Enter Your Rank : ");
+				StudentList.CollageListWithAdmission(sc.nextInt());
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 }
+		 else {
+			 setFlag(false); 
+			 
+//			 System.out.println("Please Register yourself first then move towords further process :) ");
+		 }
+		 
+		  
+	   }
+		 printflag();
+	 }
+	 public static  void AuthtificationForFee(int registrationNo) {
+		 for(Studentclass el : student) {
+			
+			 if(el.getRegistrationNumber() == registrationNo) {
+				 setFlag(true); 
+
+				 try {
+					
+					TakeFee.TakeStudentFee();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			 }
+			 else {
+				 setFlag(false);
+				 
+//				 System.out.println("Please Register yourself first then move towords further process :) ");
+			 } 
+			 
+		 }
+		 printflag();
+	 }
+	 public static  void AuthtificationForNextRound(int registrationNo) {
+		 for(Studentclass el : student) {
+			
+			 if(el.getRegistrationNumber() == registrationNo) {
+				 setFlag(true); 
+				 try {
+					System.out.println("Please Enter your Rank Here : ");
+					NextRound.CollageListWith2ndRound(sc.nextInt());
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			 }
+			 else {
+				 setFlag(false);
+				
+//				 System.out.println("Please Register yourself first then move towords further process :) ");
+			 }
+			 
+			 
+		 }
+		 printflag();
+	 }
+	 
+	 public static void printflag() {
+//		 Authentification a = new Authentification();
+		 if(isFlag()) {
+             
+		 }
+		 else {
+			 System.out.println("Please Register yourself first then move towords further process :) ");
+		 }
+	 }
+	 
+	 
+}

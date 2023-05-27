@@ -1,0 +1,84 @@
+package acts.cdac.in;
+
+/*
+ * Here in studentclass we contain student information with help of fields 
+ */
+public class Studentclass implements Comparable<Studentclass>{
+	/*
+	 * Field for student information 
+	 */
+	private String name;
+	private int age;
+	private int rank;
+	private String address;
+	private int registrationNumber;
+	
+	/*
+	 * Here is getter and setter for setting field and getting filed
+	 */
+	
+	public int getRegistrationNumber() {
+		return registrationNumber;
+	}
+	public void setRegistrationNumber(int registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	/*
+	 * Here is parameterized Constructor of StudentClass;
+	 */
+	public Studentclass(String full_name, int age, int rank,String Address,int registrationNumber) {
+		this.name = full_name;
+		this.age = age;
+		this.rank = rank;
+		this.address= Address;
+		this.registrationNumber = registrationNumber;
+	}
+	/*
+	 * Here is parameterless constructor for Studentclass ;
+	 */
+	public Studentclass() {
+		// TODO Auto-generated constructor stub
+	}
+	/*
+	 * here we Override tostring method and print with the help of string.format in good manner;
+	 */
+	@Override
+	public String toString() {
+		return String.format("%-20s%-10d%-10d%-20s", name,age,rank,address);
+		
+	}
+	/*
+	 *  here we use Comparable for sorting student according  to their ranks
+	 */
+	@Override
+	public int compareTo(Studentclass other) {
+		
+		return this.getRank() - other.getRank();
+	}
+	
+
+}

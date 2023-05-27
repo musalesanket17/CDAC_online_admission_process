@@ -1,0 +1,20 @@
+package acts.cdac.in;
+import java.util.Scanner;
+public class Program {
+	private static Scanner sc = new Scanner(System.in);
+	
+	public  void studentinfo() {
+		Student s= new Student();
+		
+	
+	
+	System.out.println("enter your full name");
+	s.setName(sc.nextLine());
+	System.out.println("enter your age");
+	s.setAge(sc.nextInt());
+	System.out.println("enter your rank");
+	s.setRank(sc.nextInt());
+	
+ }
+	
+}

@@ -1,0 +1,59 @@
+package acts.cdac.in;
+
+
+public class Student {
+	private String name;
+	private int age;
+	private int rank;
+	private String address;
+	private int registrationNumber;
+	
+	
+	public int getRegistrationNumber() {
+		return registrationNumber;
+	}
+	public void setRegistrationNumber(int registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getRank() {
+		return rank;
+	}
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+	public Student(String full_name, int age, int rank,String Address,int registrationNumber) {
+		this.name = full_name;
+		this.age = age;
+		this.rank = rank;
+		this.address= Address;
+		this.registrationNumber = registrationNumber;
+	}
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
+	@Override
+	public String toString() {
+		return String.format("%-10s%-5d%-5d%-10s", name,age,rank,address);
+		
+	}
+	
+
+}

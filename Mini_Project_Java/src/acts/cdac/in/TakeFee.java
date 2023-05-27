@@ -1,0 +1,114 @@
+package acts.cdac.in;
+
+import java.util.Scanner;
+
+/*
+ * In TakeFee class we accept fee from student ; 
+ */
+public class TakeFee {
+	private static Scanner sc = new Scanner(System.in);
+
+	/*
+	 * here TakeStudentFee with the help of various methods ; first we print All the
+	 * options for accepting fee in various manner ;
+	 */
+	public static void TakeStudentFee() throws InterruptedException {
+
+		System.out.println("Thanks for choosing the collage you may proceed to pay Fee .............");
+		System.out.println("please choose payment option ");
+		System.out.println("1.Pay through UPI ID : ");
+		System.out.println("2.Pay through Credit / Debit / ATM Card : ");
+		System.out.println("3.Pay through Net Banking : ");
+		int choice = sc.nextInt();
+		System.out.println();
+
+		switch (choice) {
+
+		case 1:
+			System.out.println("Thanks for choosing UPI payment option : ");
+			System.out.println("You have to pay Fee Rupess : 90240 Only ");
+			System.out.println("You can pay us with our UPI Id : CDAC@okhdfcbank ");
+			System.out.println("*************************************");
+			System.out.println();
+
+			System.out.println("Enter Ammount : ");
+			int amount = sc.nextInt();
+			System.out.print("Enter OTP :");
+			sc.nextInt();
+			if (amount == 90240) {
+				System.out.println("Your payment of " + amount + " proceed Sucessfully !!");
+				System.out.println("You have been alloted seat in " + StudentList.collegeName);
+				System.out.println();
+			} else {
+				System.out.println("Invalid Ammount :)");
+				TakeStudentFee();
+			}
+			break;
+		case 2:
+			System.out.println("Thanks for choosing Credit / Debit / ATM Card  payment option : ");
+			System.out.println("You have to pay Fee Rupess : 90240 Only ");
+			System.out.println("You can pay us with Credit / Debit / ATM Card ");
+			System.out.println("*************************************");
+			System.out.println();
+
+			System.out.println("Please Enter Card type : ");
+			sc.nextLine();
+			sc.nextLine();
+			System.out.println("Please Enter Card Number ");
+			sc.next();
+			System.out.println("Please Enter Card CVV ");
+			sc.next();
+			System.out.println("Enter Ammount : ");
+			int amount1 = sc.nextInt();
+			System.out.print("Enter OTP :");
+			sc.nextInt();
+			if (amount1 == 90240) {
+				System.out.println("Your payment of " + amount1 + " proceed Sucessfully !!");
+				System.out.println("You have been alloted seat in " + StudentList.collegeName);
+
+				System.out.println();
+			} else {
+
+				System.out.println("Invalid Ammount :)");
+				TakeStudentFee();
+			}
+			break;
+		case 3:
+			System.out.println();
+
+			System.out.println("Thanks for choosing Net Banking payment option : ");
+			System.out.println("You have to pay Fee Rupess : 90240 Only ");
+			System.out.println("You can pay us with Net Banking With Following details  : ");
+			System.out.println("*************************************");
+			System.out.println("Bank RTGS/NEFT Details ");
+			System.out.println("Name of Beneficiary : Center for Devolopment of advanced Computing(CDAC)");
+			System.out.println("Reciving Bank(NEFT/RTGS) : State Bank Of India ");
+			System.out.println("Account No for (NEFT/RTGS) : 38134945246 ");
+			System.out.println("IFSC No : SBIN0005349");
+			System.out.println("*************************************");
+			System.out.println();
+
+			System.out.println("Enter Ammount : ");
+			int amount2 = sc.nextInt();
+			System.out.print("Enter OTP :");
+			sc.nextInt();
+			System.out.println("Please wait for Bank Conformation...................");
+			Thread.sleep(4000);
+			if (amount2 == 90240) {
+				System.out.println("Your payment of " + amount2 + " proceed Sucessfully !!!!");
+				System.out.println("You have been alloted seat in " + StudentList.collegeName);
+
+				System.out.println();
+			} else {
+				System.out.println("Invalid Ammount :)");
+				TakeStudentFee();
+			}
+			break;
+		default:
+			System.out.println("Invalid Option !!!!!");
+
+		}
+
+	}
+
+}

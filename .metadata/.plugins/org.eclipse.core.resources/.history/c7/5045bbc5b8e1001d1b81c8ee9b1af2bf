@@ -1,0 +1,56 @@
+package acts.cdac.in;
+
+public class NextRound {
+
+	public static void CollageListWith2ndRound(int rank) {
+		
+		
+		
+		 System.out.println("Congratulation you are able to tank admission in following collages with our prediction "+"Your Rank : "+
+		 rank+"Collage :");
+		 System.out.println("We are Only give You Best Collage List based on your Rank : ");
+		 
+	if(rank <= 700) 
+		 System.out.println(" Sunbeam ");
+	else if(rank > 700 && rank <=1300) {
+		 System.out.println("Sunbeam Karad");
+		 System.out.println("IACSD Pune ");
+	}
+	else if(rank > 1300 && rank <=1800) {
+		 System.out.println("Vita");
+		 System.out.println("CDAC Kharghar");
+	}
+	else if(rank > 1800 && rank <=2200) {
+		 System.out.println("Vita");
+		 System.out.println("CDAC Kharghar");
+	}
+	else if(rank > 2200 && rank <=2500) {
+		System.out.println("CDAC Juhu");
+		System.out.println("KNOW IT");
+	}
+	else if(rank > 2500 && rank <=3000) {
+		System.out.println("IET Pune");
+	}
+	else if(rank > 3000 && rank <=3500) {
+		System.out.println("MET IIT Nashik");
+		System.out.println("Baguluru");
+	}
+	else if(rank > 3000 && rank <=3500) {
+		System.out.println("Kochi CDAC");
+		System.out.println("Bytes SoftTech");
+		
+	}
+	else if(rank > 3500 && rank <=4000) {
+		System.out.println("Chennai CDAC ");
+		System.out.println("hydrabad CDAC");
+	}
+	else
+		System.out.println("Noida CDAC");
+		
+	
+	
+	
+		 
+		
+	}
+}

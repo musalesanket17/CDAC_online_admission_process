@@ -1,0 +1,97 @@
+package acts.cdac.in;
+import java.util.Scanner;
+enum student{
+	EXIT,REGISTER,FURTHERPROCEDURE,COLLAGELST,RANK;
+}
+public class Program {
+	private static Scanner sc = new Scanner(System.in);
+	
+	public static void studentinfo() {
+    Student student= new Student();
+		
+	System.out.println("Please enter your full name : ");
+	student.setName(sc.nextLine());
+	System.out.println("Please enter your age : ");
+	student.setAge(sc.nextInt());
+	System.out.println("Please enter your rank : ");
+	student.setRank(sc.nextInt());
+	System.out.println("Please Enter Your Address : ");
+	sc.nextLine();
+	student.setAddress(sc.nextLine());
+	
+   }
+	
+   public int SubmenuListForFurtherProcess(){
+	    System.out.println("0.Exit : ");
+	    System.out.println("1.Fill Form for Further Admission Process : ");
+	    System.out.println("2.If you want to Pay Fee : ");
+	    System.out.println("3.If you want to go in Next Round : ");
+	    
+	    return sc.nextInt();
+   }
+	
+   public student menuList() {
+	   System.out.println("0.Exit");
+	   System.out.println("1.If You are New Student then register first : ");
+	   System.out.println("2.If You Already Register then for next procedure : ");
+	   System.out.println("3.If you want to see All Collage list ");
+	   System.out.println("4.If you want to predict your collage with your respected Rank : ");
+	   
+	   student[] choice = student.values();
+	   return choice[sc.nextInt()];
+   }
+   public void subSwitch() throws InterruptedException {
+	    
+	   int choice;
+	   while((choice = SubmenuListForFurtherProcess())!=0) {
+		    switch(choice) {
+		    case 1:
+		    	  try {
+					System.out.println("Please Enter Your Registration Number : ");
+					   sc.nextInt();
+					   System.out.println("Please Enter Your Rank : ");
+					   StudentList.CollageListWithAdmission(sc.nextInt());
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+		    	break;
+		    case 2: 
+		    	TakeFee.TakeStudentFee();
+		    	break;
+		    case 3:
+		    	break;
+		   		   }
+	   }
+	       
+   }
+	
+   public void Switch() {
+	   student choice = null;
+	    while((choice  = menuList())!=student.EXIT) {
+	    	 switch(choice) {
+	    	  
+	    	 case REGISTER: Program.studentinfo();
+	    		 break;
+	    	 case FURTHERPROCEDURE:
+	    		 try {
+					subSwitch();
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    		  break;
+	    	 case COLLAGELST:StudentList.AddCollegeList();
+	    		 break;
+	    	 case RANK:System.out.println("Plz Enter your Rank : ");
+	    	           StudentList.CollageListWithRank(sc.nextInt());    
+	    		 break;
+	    	 default:
+	    		   System.out.println("Please Enter Valid Choice :) ");
+	    	 }
+	    }
+	    
+   }
+	
+	
+}
